@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# create a volume for persistence (only works for the first time)
+docker volume create $PWD/n8n_data
+
+# run the volume (your edits are saved here)
+docker run -it --rm --name n8n -p 5678:5678 -v $PWD/n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n

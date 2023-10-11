@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# build the Dockerfile and run it (any changes are temporary and are not saved)
+docker build -t job_applier_prod .
+docker run -it --rm --name job_applier_prod -p 5678:5678 job_applier_prod
